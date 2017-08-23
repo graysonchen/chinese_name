@@ -26,13 +26,12 @@ class ChineseName
   end
 
   def last_name
-    @last_name ||= all_last_name[Random.rand(all_last_name.size)]
+    @last_name ||= generate_last_name
   end
 
   alias_method :to_s, :full_name
 
   private
-  attr_writer :all_last_name
 
   def generate_first_name
     Random.rand(1..2).times.inject([]) { |arr, val| arr << generate_word }
@@ -43,8 +42,16 @@ class ChineseName
     [word.to_s(16)].pack('H*').force_encoding('utf-16be').encode('utf-8')
   end
 
+  def generate_last_name
+    rand_name = all_last_name
+    rand_name[Random.rand(rand_name.size)]
+  end
+
   def all_last_name
-    filedata = File.dirname(__FILE__) + "/../data/#{LAST_NAME_DATA}"
-    IO.foreach(filedata).inject([]){ |arr, line| arr << line.strip }
+    IO.foreach(file_data).inject([]) { |arr, line| arr << line.strip }
+  end
+
+  def file_data
+    File.dirname(__FILE__) + "/../data/#{LAST_NAME_DATA}"
   end
 end
