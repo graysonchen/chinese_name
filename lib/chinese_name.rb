@@ -52,6 +52,7 @@ class ChineseName
   end
 
   def file_data
+    return ENV["LAST_NAME_FILE"] if ENV["LAST_NAME_FILE"]
     File.dirname(__FILE__) + "/../data/#{LAST_NAME_DATA}"
   end
 end
