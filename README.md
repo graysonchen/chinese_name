@@ -22,7 +22,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'chinese_name'
+
+2.4.0 :001 > g = ChineseName.generate
+ => #<ChineseName:0x007feed28f8220 @last_name="陈", @first_name="艺天", @full_name="陈艺天">
+2.4.0 :002 > g.last_name
+ => "陈"
+2.4.0 :003 > g.first_name
+ => "艺天"
+2.4.0 :004 > g.full_name
+ => "陈艺天"
+2.4.0 :005 > g.to_s
+ => "陈艺天"
+2.4.0 :006 > "#{g}"
+ => "陈艺天"
+```
 
 ## Development
 
