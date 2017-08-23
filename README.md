@@ -1,8 +1,8 @@
 # ChineseName
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chinese_name`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/graysonchen/chinese_name.svg?branch=master)](https://travis-ci.org/graysonchen/chinese_name)
 
-TODO: Delete this and the text above, and describe your gem
+Generate a Random Chinese Name
 
 ## Installation
 
