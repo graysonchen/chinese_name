@@ -4,6 +4,8 @@
 
 Generate a Random Chinese Name
 
+生成随机的中文姓名
+
 ## Installation
 
 Add this line to your application's Gemfile:
