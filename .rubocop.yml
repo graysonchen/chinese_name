@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - '*.gemspec'
+    - 'bin/*'
+    - 'exe/*'
+    - 'lib/**/version.rb'
+    - 'Gemfile'
+
+  TargetRubyVersion: 2.3
+
+Style/Documentation:
+  Enabled: false
