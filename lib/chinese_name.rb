@@ -1,7 +1,9 @@
-require "chinese_name/version"
+# frozen_string_literal: true
+
+require 'chinese_name/version'
 
 class ChineseName
-  LAST_NAME_DATA = 'last_name.dat'.freeze
+  LAST_NAME_DATA = 'last_name.dat'
 
   attr_reader :full_name, :first_name, :last_name
 
@@ -9,7 +11,7 @@ class ChineseName
     def generate
       new
     end
-    alias_method :g, :generate
+    alias g generate
   end
 
   def initialize
@@ -29,16 +31,16 @@ class ChineseName
     @last_name ||= generate_last_name
   end
 
-  alias_method :to_s, :full_name
+  alias to_s full_name
 
   private
 
   def generate_first_name
-    Random.rand(1..2).times.inject([]) { |arr, val| arr << generate_word }
+    Random.rand(1..2).times.inject([]) { |arr, _val| arr << generate_word }
   end
 
   def generate_word
-    word = (19968..20901).to_a.sample
+    word = (19_968..20_901).to_a.sample
     [word.to_s(16)].pack('H*').force_encoding('utf-16be').encode('utf-8')
   end
 
@@ -52,7 +54,7 @@ class ChineseName
   end
 
   def file_data
-    return ENV["LAST_NAME_FILE"] if ENV["LAST_NAME_FILE"]
+    return ENV['LAST_NAME_FILE'] if ENV['LAST_NAME_FILE']
     File.dirname(__FILE__) + "/../data/#{LAST_NAME_DATA}"
   end
 end
