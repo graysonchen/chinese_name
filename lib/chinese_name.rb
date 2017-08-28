@@ -40,7 +40,7 @@ class ChineseName
   end
 
   def generate_word
-    word = (19_968..20_901).to_a.sample
+    word = Random.rand(19_968..40_869)
     [word.to_s(16)].pack('H*').force_encoding('utf-16be').encode('utf-8')
   end
 
