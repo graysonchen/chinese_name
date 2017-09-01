@@ -50,7 +50,7 @@ class ChineseName
   end
 
   def all_last_name
-    IO.foreach(file_data).inject([]) { |arr, line| arr << line.strip }
+    @@all_last_name ||= IO.foreach(file_data).inject([]) { |arr, line| arr << line.strip }
   end
 
   def file_data

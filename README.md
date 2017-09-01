@@ -49,6 +49,21 @@ $ rand_chinese_name
 ```
 
 
+```
+require 'benchmark'
+
+Benchmark.measure { 100_000.times { ChineseName.generate } }
+
+ => #<Benchmark::Tms:0x007fa60b1bb238 @label="", @real=44.099358999868855, @cstime=0.0, @cutime=0.0, @stime=2.7199999999999998, @utime=36.43, @total=39.15>
+
+
+require 'ffaker'
+FFaker::NameCN
+
+
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
