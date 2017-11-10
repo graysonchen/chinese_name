@@ -28,7 +28,7 @@ Or install it yourself as:
 require 'chinese_name'
 
 2.4.0 :001 > g = ChineseName.generate
- => #<ChineseName:0x007feed28f8220 @last_name="陈", @first_name="艺天", @full_name="陈艺天">
+ => #<ChineseName:0x007feed28f8221 @last_name="陈", @first_name="艺天", @full_name="陈艺天">
 2.4.0 :002 > g.last_name
  => "陈"
 2.4.0 :003 > g.first_name
